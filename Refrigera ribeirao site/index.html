@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Refrigera Ribeirão - Ar-condicionado Profissional</title>
+    <meta name="description" content="Serviços profissionais de ar-condicionado em Ribeirão Preto e região. Instalação, manutenção e limpeza com excelência técnica.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, h4, h5, h6, .font-oswald { font-family: 'Oswald', sans-serif; }
+        
+        /* Custom Animations */
+        @keyframes pulse-green {
+            0% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); transform: scale(1); }
+            70% { box-shadow: 0 0 0 15px rgba(34, 197, 94, 0); transform: scale(1.05); }
+            100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); transform: scale(1); }
+        }
+        .animate-pulse-green {
+            animation: pulse-green 2s infinite;
+        }
+
+        /* Utility for image masking in "Why Choose Us" section */
+        .mask-image-gradient {
+            mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+            -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+        }
+        
+        html { scroll-behavior: smooth; }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.1",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.1/",
+    "react/": "https://aistudiocdn.com/react@^19.2.1/",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.556.0"
+  }
+}
+</script>
+</head>
+<body class="bg-slate-50 text-slate-900 antialiased">
+
+    <!-- HEADER -->
+    <header id="main-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-4 bg-transparent">
+        <div class="container mx-auto px-4 md:px-6 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="#home" class="block transform hover:scale-105 transition-transform duration-300 group">
+                <div class="flex flex-col items-center leading-none select-none">
+                    <div id="logo-icon-container" class="relative flex items-center justify-center mb-1 text-white">
+                        <!-- Snowflake Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h20"/><path d="M12 2v20"/><path d="m20 20-4-4"/><path d="m4 4 4 4"/><path d="m4 20 4-4"/><path d="m20 4-4 4"/></svg>
+                        <!-- Decorative Brackets -->
+                        <div class="logo-bracket absolute -left-2 top-0 bottom-0 w-[2px] rounded-full opacity-50 bg-white" style="height: 70%; top: 15%;"></div>
+                        <div class="logo-bracket absolute -right-2 top-0 bottom-0 w-[2px] rounded-full opacity-50 bg-white" style="height: 70%; top: 15%;"></div>
+                        <div class="logo-bracket absolute -top-1 left-0 right-0 h-[2px] rounded-full opacity-50 bg-white" style="width: 60%; left: 20%;"></div>
+                    </div>
+                    <div class="flex gap-1 font-oswald font-bold tracking-tighter text-3xl">
+                        <span id="logo-text-1" class="text-white">REFRIGERA</span>
+                        <span id="logo-text-2" class="text-blue-200">RIBEIRÃO</span>
+                    </div>
+                    <span id="logo-subtitle" class="font-sans font-semibold tracking-[0.2em] uppercase text-sm text-blue-100">
+                        Ar-condicionado
+                    </span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden lg:flex items-center gap-8">
+                <a href="#home" class="nav-link text-sm font-semibold uppercase tracking-wide hover:text-blue-400 transition-colors text-white/90 shadow-black drop-shadow-sm">Início</a>
+                <a href="#services" class="nav-link text-sm font-semibold uppercase tracking-wide hover:text-blue-400 transition-colors text-white/90 shadow-black drop-shadow-sm">Serviços</a>
+                <a href="#projects" class="nav-link text-sm font-semibold uppercase tracking-wide hover:text-blue-400 transition-colors text-white/90 shadow-black drop-shadow-sm">Projetos</a>
+                <a href="#testimonials" class="nav-link text-sm font-semibold uppercase tracking-wide hover:text-blue-400 transition-colors text-white/90 shadow-black drop-shadow-sm">Depoimentos</a>
+                
+                <a href="https://wa.me/5516993880110?text=Ol%C3%A1!%20Gostaria%20de%20um%20or%C3%A7amento%20para%20servi%C3%A7os%20de%20ar-condicionado." target="_blank" class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-md font-semibold transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0 focus:outline-none focus:ring-2 focus:ring-offset-2 bg-green-600 text-white hover:bg-green-500 shadow-lg shadow-green-600/30 focus:ring-green-600">
+                    <svg viewBox="0 0 24 24" width="20" height="20" class="fill-current" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                    Orçamento Rápido
+                </a>
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="lg:hidden p-2 rounded-md text-white">
+                <svg id="menu-icon-open" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+                <svg id="menu-icon-close" class="hidden" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="hidden absolute top-full left-0 right-0 bg-white border-t shadow-xl p-4 flex flex-col gap-4 lg:hidden animate-in slide-in-from-top-5">
+            <a href="#home" class="mobile-link text-slate-800 font-bold py-2 border-b border-gray-100">Início</a>
+            <a href="#services" class="mobile-link text-slate-800 font-bold py-2 border-b border-gray-100">Serviços</a>
+            <a href="#projects" class="mobile-link text-slate-800 font-bold py-2 border-b border-gray-100">Projetos</a>
+            <a href="#testimonials" class="mobile-link text-slate-800 font-bold py-2 border-b border-gray-100">Depoimentos</a>
+            <a href="https://wa.me/5516993880110?text=Ol%C3%A1!%20Gostaria%20de%20um%20or%C3%A7amento%20para%20servi%C3%A7os%20de%20ar-condicionado." class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-md font-semibold transition-all duration-300 w-full bg-green-600 text-white hover:bg-green-500 shadow-lg">
+                <svg viewBox="0 0 24 24" width="20" height="20" class="fill-current" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                Falar no WhatsApp
+            </a>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section id="home" class="relative h-screen min-h-[650px] flex items-center justify-center overflow-hidden bg-blue-950">
+        <!-- Background Image -->
+        <div class="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000" style="background-image: url('https://images.unsplash.com/photo-1621905476438-5f05169a646e?q=80&w=2070&auto=format&fit=crop');">
+            <div class="absolute inset-0 bg-gradient-to-r from-blue-950/90 to-blue-900/60"></div>
+        </div>
+
+        <!-- Content -->
+        <div class="container mx-auto px-4 relative z-10 pt-10 text-center lg:text-left">
+            <div class="max-w-4xl flex flex-col items-center lg:items-start mx-auto lg:mx-0">
+                <!-- Logo Display (Static for simplicity in Hero) -->
+                <div class="mb-8 flex flex-col items-center lg:items-start leading-none select-none">
+                    <div class="relative flex items-center justify-center mb-1 text-white">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h20"/><path d="M12 2v20"/><path d="m20 20-4-4"/><path d="m4 4 4 4"/><path d="m4 20 4-4"/><path d="m20 4-4 4"/></svg>
+                        <div class="absolute -left-2 top-0 bottom-0 w-[2px] rounded-full opacity-50 bg-white" style="height: 70%; top: 15%;"></div>
+                        <div class="absolute -right-2 top-0 bottom-0 w-[2px] rounded-full opacity-50 bg-white" style="height: 70%; top: 15%;"></div>
+                        <div class="absolute -top-1 left-0 right-0 h-[2px] rounded-full opacity-50 bg-white" style="width: 60%; left: 20%;"></div>
+                    </div>
+                    <div class="flex gap-3 font-oswald font-bold tracking-tighter text-5xl">
+                        <span class="text-white">REFRIGERA</span>
+                        <span class="text-blue-200">RIBEIRÃO</span>
+                    </div>
+                    <span class="font-sans font-semibold tracking-[0.2em] uppercase text-xl text-blue-100">Ar-condicionado</span>
+                </div>
+
+                <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-4 py-1 rounded-full text-white mb-6 border border-white/20">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-300"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                    <span class="text-sm font-medium tracking-wide">Atendemos Ribeirão Preto e Região</span>
+                </div>
+                
+                <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight uppercase font-oswald text-center lg:text-left">
+                    Climatização com <br/>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-200 to-white">Precisão Técnica</span>
+                </h1>
+                
+                <p class="text-lg md:text-xl text-gray-200 mb-8 max-w-2xl font-light leading-relaxed text-center lg:text-left">
+                    Especialistas em instalação, manutenção e projetos. Garantimos o conforto da sua casa ou empresa com eficiência e seriedade.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start w-full sm:w-auto">
+                    <a href="https://wa.me/5516993880110?text=Ol%C3%A1!%20Gostaria%20de%20um%20or%C3%A7amento%20para%20servi%C3%A7os%20de%20ar-condicionado." target="_blank" class="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-md font-semibold transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0 focus:outline-none focus:ring-2 focus:ring-offset-2 bg-green-600 text-white hover:bg-green-500 shadow-lg shadow-green-600/30 focus:ring-green-600 text-lg w-full sm:w-auto animate-pulse-green">
+                        <svg viewBox="0 0 24 24" width="20" height="20" class="fill-current" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                        Falar agora no WhatsApp
+                    </a>
+                    <a href="#services" class="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-md font-semibold transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0 focus:outline-none focus:ring-2 focus:ring-offset-2 bg-transparent border-2 border-white text-white hover:bg-white/10 focus:ring-white text-lg w-full sm:w-auto">
+                        Conhecer Serviços
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Stats/Badge strip -->
+        <div class="absolute bottom-0 left-0 right-0 bg-white/5 backdrop-blur-md border-t border-white/10 py-6 hidden md:block">
+            <div class="container mx-auto px-4 flex justify-around text-white/90">
+                <div class="text-center">
+                    <p class="font-bold text-2xl font-oswald">100%</p>
+                    <p class="text-xs uppercase tracking-wider opacity-70">Satisfação</p>
+                </div>
+                <div class="text-center border-l border-white/10 pl-12">
+                    <p class="font-bold text-2xl font-oswald">+5 Anos</p>
+                    <p class="text-xs uppercase tracking-wider opacity-70">Experiência</p>
+                </div>
+                <div class="text-center border-l border-white/10 pl-12">
+                    <p class="font-bold text-2xl font-oswald">24h</p>
+                    <p class="text-xs uppercase tracking-wider opacity-70">Atendimento Agendado</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <!-- Section Header -->
+            <div class="text-center mb-12 max-w-3xl mx-auto">
+                <p class="text-sm font-semibold text-slate-500 uppercase tracking-widest mb-2">
+                    atendimento rápido no melhor preço perto de você!
+                </p>
+                <h2 class="text-3xl md:text-5xl font-bold text-slate-900 mb-4 uppercase tracking-wide font-oswald">
+                    Nossos Serviços
+                </h2>
+                <div class="w-24 h-1.5 bg-blue-900 mx-auto mb-6"></div>
+                <p class="text-slate-600 text-lg">
+                    Soluções completas em climatização, executadas por profissionais certificados. Garantimos o melhor custo-benefício para sua residência ou empresa.
+                </p>
+            </div>
+
+            <!-- Services Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
+                <!-- Service 1: Instalação -->
+                <div class="bg-white rounded-lg shadow-md border border-slate-200 overflow-hidden flex flex-col hover:shadow-xl transition-shadow duration-300">
+                    <div class="relative h-52 overflow-hidden bg-slate-100">
+                        <img src=https://arcondicionado.ribeirao.br/wp-content/uploads/2025/07/Instalacao-de-Ar-Condicionado_-1024x537.jpg alt="Instalação de Ar-Condicionado" loading="lazy" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="pt-6 px-6 pb-2 flex flex-col flex-grow text-center">
+                        <h3 class="text-2xl font-bold text-slate-900 mb-2 font-oswald leading-tight">Instalação de Ar-Condicionado</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6 flex-grow">Instalação de ar split completa com tubulação e suporte em Ribeirão Preto.</p>
+                    </div>
+                    <div class="px-4 pb-4">
+                        <a href="https://wa.me/5516993880110?text=Ol%C3%A1!%20Gostaria%20de%20um%20or%C3%A7amento%20para%20Instala%C3%A7%C3%A3o%20de%20Ar-Condicionado." target="_blank" class="bg-blue-900 hover:bg-blue-800 text-white font-semibold py-3 px-6 rounded-md w-full flex items-center justify-center gap-2 transition-colors group">
+                            <span>Saiba mais</span>
+                            <svg viewBox="0 0 24 24" width="18" height="18" class="fill-current text-white" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-1 transition-transform"><path d="m6 17 5-5-5-5"/><path d="m13 17 5-5-5-5"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service 2: Manutenção -->
+                <div class="bg-white rounded-lg shadow-md border border-slate-200 overflow-hidden flex flex-col hover:shadow-xl transition-shadow duration-300">
+                    <div class="relative h-52 overflow-hidden bg-slate-100">
+                        <img src=https://arcondicionado.ribeirao.br/wp-content/uploads/2025/07/manutencao-preventiva_.jpg alt="Manutenção Preventiva" loading="lazy" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="pt-6 px-6 pb-2 flex flex-col flex-grow text-center">
+                        <h3 class="text-2xl font-bold text-slate-900 mb-2 font-oswald leading-tight">Manutenção Preventiva</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6 flex-grow">Realize a manutenção periódica do seu ar condicionado com a nossa equipe técnica.</p>
+                    </div>
+                    <div class="px-4 pb-4">
+                        <a href="https://wa.me/5516993880110?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20a%20Manuten%C3%A7%C3%A3o%20Preventiva." target="_blank" class="bg-blue-900 hover:bg-blue-800 text-white font-semibold py-3 px-6 rounded-md w-full flex items-center justify-center gap-2 transition-colors group">
+                            <span>Saiba mais</span>
+                            <svg viewBox="0 0 24 24" width="18" height="18" class="fill-current text-white" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-1 transition-transform"><path d="m6 17 5-5-5-5"/><path d="m13 17 5-5-5-5"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service 3: Limpeza -->
+                <div class="bg-white rounded-lg shadow-md border border-slate-200 overflow-hidden flex flex-col hover:shadow-xl transition-shadow duration-300">
+                    <div class="relative h-52 overflow-hidden bg-slate-100">
+                        <img src=https://arcondicionado.ribeirao.br/wp-content/uploads/2025/07/limpeza-de-ar-condicionado_.jpg alt="Limpeza de Ar-Condicionado" loading="lazy" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="pt-6 px-6 pb-2 flex flex-col flex-grow text-center">
+                        <h3 class="text-2xl font-bold text-slate-900 mb-2 font-oswald leading-tight">Limpeza de Ar-Condicionado</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6 flex-grow">Higienização interna e externa para melhorar o desempenho e o ar.</p>
+                    </div>
+                    <div class="px-4 pb-4">
+                        <a href="https://wa.me/5516993880110?text=Ol%C3%A1!%20Preciso%20de%20uma%20Limpeza%20de%20Ar-Condicionado." target="_blank" class="bg-blue-900 hover:bg-blue-800 text-white font-semibold py-3 px-6 rounded-md w-full flex items-center justify-center gap-2 transition-colors group">
+                            <span>Saiba mais</span>
+                            <svg viewBox="0 0 24 24" width="18" height="18" class="fill-current text-white" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-1 transition-transform"><path d="m6 17 5-5-5-5"/><path d="m13 17 5-5-5-5"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service 4: Conserto -->
+                <div class="bg-white rounded-lg shadow-md border border-slate-200 overflow-hidden flex flex-col hover:shadow-xl transition-shadow duration-300">
+                    <div class="relative h-52 overflow-hidden bg-slate-100">
+                        <img src=https://arcondicionado.ribeirao.br/wp-content/uploads/2025/07/conserto-de-ar-condicionado_.jpg alt="Conserto de Ar-Condicionado" loading="lazy" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="pt-6 px-6 pb-2 flex flex-col flex-grow text-center">
+                        <h3 class="text-2xl font-bold text-slate-900 mb-2 font-oswald leading-tight">Conserto de Ar-Condicionado</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6 flex-grow">Reparo de placas, ventoinhas, sensores e falhas no funcionamento.</p>
+                    </div>
+                    <div class="px-4 pb-4">
+                        <a href="https://wa.me/5516993880110?text=Ol%C3%A1!%20Meu%20ar-condicionado%20est%C3%A1%20com%20defeito%2C%20preciso%20de%20um%20Conserto." target="_blank" class="bg-blue-900 hover:bg-blue-800 text-white font-semibold py-3 px-6 rounded-md w-full flex items-center justify-center gap-2 transition-colors group">
+                            <span>Saiba mais</span>
+                            <svg viewBox="0 0 24 24" width="18" height="18" class="fill-current text-white" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-1 transition-transform"><path d="m6 17 5-5-5-5"/><path d="m13 17 5-5-5-5"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service 5: Desinstalação -->
+                <div class="bg-white rounded-lg shadow-md border border-slate-200 overflow-hidden flex flex-col hover:shadow-xl transition-shadow duration-300">
+                    <div class="relative h-52 overflow-hidden bg-slate-100">
+                        <img src=https://arcondicionado.ribeirao.br/wp-content/uploads/2025/07/desinstalacao-de-ar-condicionado_.jpg alt="Desinstalação de Ar-Condicionado" loading="lazy" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="pt-6 px-6 pb-2 flex flex-col flex-grow text-center">
+                        <h3 class="text-2xl font-bold text-slate-900 mb-2 font-oswald leading-tight">Desinstalação de Ar-Condicionado</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6 flex-grow">Desinstalação completa de ar split com retirada imediata e acabamento.</p>
+                    </div>
+                    <div class="px-4 pb-4">
+                        <a href="https://wa.me/5516993880110?text=Ol%C3%A1!%20Gostaria%20de%20cotar%20uma%20Desinstala%C3%A7%C3%A3o%20de%20Ar-Condicionado." target="_blank" class="bg-blue-900 hover:bg-blue-800 text-white font-semibold py-3 px-6 rounded-md w-full flex items-center justify-center gap-2 transition-colors group">
+                            <span>Saiba mais</span>
+                            <svg viewBox="0 0 24 24" width="18" height="18" class="fill-current text-white" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-1 transition-transform"><path d="m6 17 5-5-5-5"/><path d="m13 17 5-5-5-5"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service 6: Carga de Gás -->
+                <div class="bg-white rounded-lg shadow-md border border-slate-200 overflow-hidden flex flex-col hover:shadow-xl transition-shadow duration-300">
+                    <div class="relative h-52 overflow-hidden bg-slate-100">
+                        <img src= https://arcondicionado.ribeirao.br/wp-content/uploads/2025/07/carga-de-gas-refrigerante_.jpg alt="Carga de Gás Refrigerante" loading="lazy" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="pt-6 px-6 pb-2 flex flex-col flex-grow text-center">
+                        <h3 class="text-2xl font-bold text-slate-900 mb-2 font-oswald leading-tight">Carga de Gás Refrigerante</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6 flex-grow">Ar não gela? Fazemos recarga de gás em Ribeirão Preto com segurança e rapidez.</p>
+                    </div>
+                    <div class="px-4 pb-4">
+                        <a href="https://wa.me/5516993880110?text=Ol%C3%A1!%20Acho%20que%20meu%20ar%20precisa%20de%20uma%20Carga%20de%20G%C3%A1s." target="_blank" class="bg-blue-900 hover:bg-blue-800 text-white font-semibold py-3 px-6 rounded-md w-full flex items-center justify-center gap-2 transition-colors group">
+                            <span>Saiba mais</span>
+                            <svg viewBox="0 0 24 24" width="18" height="18" class="fill-current text-white" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-1 transition-transform"><path d="m6 17 5-5-5-5"/><path d="m13 17 5-5-5-5"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Strip -->
+            <div class="bg-slate-900 rounded-lg p-8 text-white shadow-xl">
+                <div class="grid md:grid-cols-3 gap-8 text-center divide-y md:divide-y-0 md:divide-x divide-slate-700/50">
+                    <div class="flex flex-col items-center px-4 pt-4 md:pt-0">
+                        <div class="bg-blue-900/50 p-3 rounded-full mb-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-300"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
+                        </div>
+                        <h4 class="text-lg font-bold mb-2 uppercase font-oswald tracking-wide">Certificação Técnica</h4>
+                        <p class="text-slate-400 text-sm max-w-xs">Equipe altamente capacitada e atualizada com as novas tecnologias.</p>
+                    </div>
+                    <div class="flex flex-col items-center px-4 pt-4 md:pt-0">
+                        <div class="bg-blue-900/50 p-3 rounded-full mb-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-300"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        </div>
+                        <h4 class="text-lg font-bold mb-2 uppercase font-oswald tracking-wide">Atendimento Ágil</h4>
+                        <p class="text-slate-400 text-sm max-w-xs">Compromisso com prazos e pontualidade em Ribeirão Preto e região.</p>
+                    </div>
+                    <div class="flex flex-col items-center px-4 pt-4 md:pt-0">
+                        <div class="bg-blue-900/50 p-3 rounded-full mb-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-300"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+                        </div>
+                        <h4 class="text-lg font-bold mb-2 uppercase font-oswald tracking-wide">Garantia de Serviço</h4>
+                        <p class="text-slate-400 text-sm max-w-xs">Segurança total com garantia estendida na instalação e manutenção.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY CHOOSE US -->
+    <section id="why-choose-us" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            
+            <!-- Text Content -->
+            <div class="max-w-4xl mx-auto mb-16 space-y-6 text-slate-700">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6 font-oswald uppercase leading-tight">
+                    Por que escolher o Serviço da Refrigera Ribeirão?
+                </h2>
+                
+                <p class="text-lg leading-relaxed">
+                    Buscando uma <span class="font-bold text-blue-900">empresa de ar-condicionado em Ribeirão Preto</span> com atendimento rápido e serviço garantido? Instalamos, limpamos e consertamos com responsabilidade e transparência.
+                </p>
+                
+                <div class="flex items-center gap-3 p-4 bg-blue-50 border-l-4 border-blue-900 rounded-r-md">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-900 shrink-0"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14H4z"/></svg>
+                    <p class="font-bold text-slate-900 text-lg">
+                        Chegamos rápido, com técnicos experientes e preço justo!
+                    </p>
+                </div>
+
+                <p class="leading-relaxed">
+                    Nossa equipe atende toda Ribeirão Preto com instalação de ar-condicionado split, manutenção preventiva, recarga de gás e limpeza profissional. Usamos ferramentas adequadas, EPI e emitimos nota fiscal.
+                </p>
+
+                <p class="leading-relaxed font-medium">
+                    Solicite agora mesmo via WhatsApp e agende seu atendimento sem complicação!
+                </p>
+
+                <!-- Features Grid Mini -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 pt-4">
+                    <div class="flex items-center gap-2 text-sm text-slate-600 font-semibold bg-slate-50 p-2 rounded">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-600"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
+                        <span>Garantia Total</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-sm text-slate-600 font-semibold bg-slate-50 p-2 rounded">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-600"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14H4z"/></svg>
+                        <span>Atendimento Rápido</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-sm text-slate-600 font-semibold bg-slate-50 p-2 rounded">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-600"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+                        <span>Técnicos Certificados</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-sm text-slate-600 font-semibold bg-slate-50 p-2 rounded">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-600"><path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><path d="M12 17V7"/></svg>
+                        <span>Nota Fiscal</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA Banner -->
+            <div class="relative mt-12 bg-gradient-to-r from-blue-900 to-blue-800 rounded-3xl shadow-2xl overflow-hidden max-w-5xl mx-auto flex flex-col md:flex-row items-center">
+                
+                <!-- Decorative Circles -->
+                <div class="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2 blur-2xl"></div>
+                <div class="absolute bottom-0 left-0 w-32 h-32 bg-white/5 rounded-full translate-y-1/2 -translate-x-1/2 blur-xl"></div>
+
+                <!-- Image Section -->
+                <div class="relative w-full md:w-1/3 h-64 md:h-auto flex items-end justify-center md:justify-start overflow-hidden md:overflow-visible bg-blue-950 md:bg-transparent">
+                    <div class="relative md:absolute md:bottom-0 md:left-8 w-64 h-64 md:w-80 md:h-80 md:scale-110 origin-bottom z-10">
+                        <img 
+                        src=https://arcondicionado.ribeirao.br/wp-content/uploads/2025/07/ar-condicionado.png 
+                        alt="Técnico Especialista" 
+                        class="w-full h-full object-cover object-top mask-image-gradient rounded-b-none md:rounded-t-full shadow-2xl"
+                        style="mask-image: linear-gradient(to bottom, black 80%, transparent 100%); -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);"
+                        />
+                        <div class="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-blue-900 to-transparent md:hidden"></div>
+                    </div>
+                </div>
+
+                <!-- Text/Action Section -->
+                <div class="flex-1 p-8 md:p-12 md:pl-20 text-center md:text-left relative z-20">
+                    <h3 class="text-3xl md:text-4xl font-bold text-white font-oswald mb-4">
+                        Ar Condicionado Perto de Mim
+                    </h3>
+                    <p class="text-blue-100 text-lg mb-8 leading-relaxed max-w-xl">
+                        Instalação, manutenção ou limpeza de ar condicionado? Chame um técnico profissional agora mesmo! 
+                        Atendimento rápido em Ribeirão Preto com equipe especializada e total segurança.
+                    </p>
+                    
+                    <div class="flex justify-center md:justify-start">
+                        <a href="https://wa.me/5516993880110?text=Ol%C3%A1!%20Gostaria%20de%20um%20or%C3%A7amento%20para%20servi%C3%A7os%20de%20ar-condicionado." target="_blank" class="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-md font-semibold transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0 focus:outline-none focus:ring-2 focus:ring-offset-2 bg-green-500 hover:bg-green-400 text-white font-bold shadow-green-900/20 text-lg animate-pulse-green">
+                            <svg viewBox="0 0 24 24" width="20" height="20" class="fill-current" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                            Solicitar orçamento
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section id="testimonials" class="py-20 bg-slate-50 border-t border-slate-200">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4 uppercase tracking-wide font-oswald">
+                    O que dizem nossos clientes
+                </h2>
+                <div class="w-20 h-1 bg-blue-900 mx-auto mb-6"></div>
+                <p class="text-slate-600">Depoimentos reais recebidos via WhatsApp</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Review 1 -->
+                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow border border-slate-100 relative group">
+                    <div class="flex gap-1 mb-4 text-yellow-400">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    </div>
+                    <p class="text-slate-600 mb-6 italic text-sm leading-relaxed">"Profissionalismo raro de encontrar. A equipe chegou no horário, uniformizada, protegeu todos os móveis antes de começar e deixou o local impecável. O ar condicionado ficou parecendo novo."</p>
+                    <div class="border-t border-slate-100 pt-4">
+                        <p class="font-bold text-slate-900">Ricardo Mendes</p>
+                        <p class="text-xs text-slate-500 uppercase tracking-wider">Empresário</p>
+                    </div>
+                    <!-- WhatsApp Badge -->
+                    <div class="absolute -top-3 -right-3 w-10 h-10 bg-green-500 rounded-full flex items-center justify-center shadow-lg transform group-hover:scale-110 transition-transform duration-300 text-white">
+                        <svg viewBox="0 0 24 24" width="20" height="20" class="fill-current" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                    </div>
+                </div>
+                <!-- Review 2 -->
+                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow border border-slate-100 relative group">
+                    <div class="flex gap-1 mb-4 text-yellow-400">
+                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    </div>
+                    <p class="text-slate-600 mb-6 italic text-sm leading-relaxed">"Chamei para uma urgência no calor e fui atendida prontamente. O técnico explicou tudo o que estava sendo feito. Preço justo e serviço de altíssima qualidade. Recomendo para todos em Ribeirão."</p>
+                    <div class="border-t border-slate-100 pt-4">
+                        <p class="font-bold text-slate-900">Ana Paula Souza</p>
+                        <p class="text-xs text-slate-500 uppercase tracking-wider">Residencial</p>
+                    </div>
+                    <!-- WhatsApp Badge -->
+                    <div class="absolute -top-3 -right-3 w-10 h-10 bg-green-500 rounded-full flex items-center justify-center shadow-lg transform group-hover:scale-110 transition-transform duration-300 text-white">
+                        <svg viewBox="0 0 24 24" width="20" height="20" class="fill-current" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                    </div>
+                </div>
+                 <!-- Review 3 -->
+                 <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow border border-slate-100 relative group">
+                    <div class="flex gap-1 mb-4 text-yellow-400">
+                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    </div>
+                    <p class="text-slate-600 mb-6 italic text-sm leading-relaxed">"A Refrigera Ribeirão cuida da manutenção de todo nosso condomínio. Desde que contratamos, o número de reclamações sobre climatização caiu para zero. Parceiros de confiança."</p>
+                    <div class="border-t border-slate-100 pt-4">
+                        <p class="font-bold text-slate-900">Condomínio Vista Alegre</p>
+                        <p class="text-xs text-slate-500 uppercase tracking-wider">Gestão Predial</p>
+                    </div>
+                    <!-- WhatsApp Badge -->
+                    <div class="absolute -top-3 -right-3 w-10 h-10 bg-green-500 rounded-full flex items-center justify-center shadow-lg transform group-hover:scale-110 transition-transform duration-300 text-white">
+                        <svg viewBox="0 0 24 24" width="20" height="20" class="fill-current" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-900 text-white pt-16 pb-8 border-t-4 border-blue-900">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-12 mb-12">
+                
+                <!-- Brand -->
+                <div class="flex flex-col items-start">
+                    <div class="mb-6">
+                        <div class="flex flex-col items-start leading-none select-none">
+                            <div class="relative flex items-center justify-center mb-1 text-white">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h20"/><path d="M12 2v20"/><path d="m20 20-4-4"/><path d="m4 4 4 4"/><path d="m4 20 4-4"/><path d="m20 4-4 4"/></svg>
+                                <div class="absolute -left-2 top-0 bottom-0 w-[2px] rounded-full opacity-50 bg-white" style="height: 70%; top: 15%;"></div>
+                                <div class="absolute -right-2 top-0 bottom-0 w-[2px] rounded-full opacity-50 bg-white" style="height: 70%; top: 15%;"></div>
+                                <div class="absolute -top-1 left-0 right-0 h-[2px] rounded-full opacity-50 bg-white" style="width: 60%; left: 20%;"></div>
+                            </div>
+                            <div class="flex gap-1 font-oswald font-bold tracking-tighter text-3xl">
+                                <span class="text-white">REFRIGERA</span>
+                                <span class="text-blue-200">RIBEIRÃO</span>
+                            </div>
+                            <span class="font-sans font-semibold tracking-[0.2em] uppercase text-sm text-blue-100">Ar-condicionado</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6 max-w-xs">
+                        Especialistas em climatização. Levamos conforto e tecnologia para sua casa ou empresa com o máximo de eficiência.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-blue-900 transition-colors">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-blue-900 transition-colors">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="font-bold text-lg mb-6 uppercase tracking-wider text-blue-400 font-oswald">Serviços</h4>
+                    <ul class="space-y-3 text-gray-300 text-sm">
+                        <li><a href="#" class="hover:text-white transition-colors">Instalação de Split</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Limpeza e Higienização</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Manutenção Preventiva</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Infraestrutura</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Contratos Mensais</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h4 class="font-bold text-lg mb-6 uppercase tracking-wider text-blue-400 font-oswald">Contato</h4>
+                    <ul class="space-y-4">
+                        <li>
+                            <a href="tel:16993880110" class="flex items-start gap-3 hover:text-blue-300 transition-colors group">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mt-1 text-slate-500 group-hover:text-blue-400"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                                <div>
+                                    <span class="block text-sm text-gray-400">Telefone / WhatsApp</span>
+                                    <span class="font-semibold text-lg">(16) 99388-0110</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <div class="flex items-start gap-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mt-1 text-slate-500"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                                <div>
+                                    <span class="block text-sm text-gray-400">Localização</span>
+                                    <span class="text-gray-200">Ribeirão Preto e Região, SP</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="flex items-start gap-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mt-1 text-slate-500"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                                <div>
+                                    <span class="block text-sm text-gray-400">Email</span>
+                                    <span class="text-gray-200">contato@refrigeraribeirao.com.br</span>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500">
+                <p>© 2024 Refrigera Ribeirão. Todos os direitos reservados.</p>
+                <p>Desenvolvido com excelência.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp -->
+    <a href="https://wa.me/5516993880110?text=Ol%C3%A1!%20Gostaria%20de%20um%20or%C3%A7amento%20para%20servi%C3%A7os%20de%20ar-condicionado." target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 z-50 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 hover:scale-110 transition-all duration-300 flex items-center justify-center animate-pulse-green group" aria-label="Falar no WhatsApp">
+        <svg viewBox="0 0 24 24" width="32" height="32" class="fill-current text-white" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        <span class="absolute right-full mr-4 bg-white text-slate-800 px-3 py-1 rounded-md text-sm font-bold shadow-md whitespace-nowrap hidden group-hover:block transition-all">
+          Orçamento Rápido
+        </span>
+    </a>
+
+    <!-- SCRIPTS -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const header = document.getElementById('main-header');
+            const logoText1 = document.getElementById('logo-text-1');
+            const logoText2 = document.getElementById('logo-text-2');
+            const logoSubtitle = document.getElementById('logo-subtitle');
+            const logoBrackets = document.querySelectorAll('.logo-bracket');
+            const logoIconContainer = document.getElementById('logo-icon-container');
+            const navLinks = document.querySelectorAll('.nav-link');
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuIconOpen = document.getElementById('menu-icon-open');
+            const menuIconClose = document.getElementById('menu-icon-close');
+            const mobileLinks = document.querySelectorAll('.mobile-link');
+
+            // Scroll Handler
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 20) {
+                    // Scrolled State
+                    header.classList.remove('bg-transparent', 'py-4');
+                    header.classList.add('bg-white/95', 'backdrop-blur-sm', 'shadow-md', 'py-2');
+                    
+                    // Logo Colors
+                    logoText1.classList.remove('text-white');
+                    logoText1.classList.add('text-blue-700');
+                    logoText2.classList.remove('text-blue-200');
+                    logoText2.classList.add('text-slate-900');
+                    logoSubtitle.classList.remove('text-blue-100');
+                    logoSubtitle.classList.add('text-blue-600');
+                    logoIconContainer.classList.remove('text-white');
+                    logoIconContainer.classList.add('text-blue-700');
+                    
+                    logoBrackets.forEach(el => {
+                        el.classList.remove('bg-white');
+                        el.classList.add('bg-slate-900');
+                    });
+
+                    // Nav Links Colors
+                    navLinks.forEach(link => {
+                        link.classList.remove('text-white/90', 'shadow-black', 'drop-shadow-sm');
+                        link.classList.add('text-slate-800');
+                    });
+                    
+                    // Mobile Menu Button Color
+                    mobileMenuBtn.classList.remove('text-white');
+                    mobileMenuBtn.classList.add('text-blue-900');
+
+                } else {
+                    // Default State (Transparent)
+                    header.classList.add('bg-transparent', 'py-4');
+                    header.classList.remove('bg-white/95', 'backdrop-blur-sm', 'shadow-md', 'py-2');
+
+                    // Logo Colors
+                    logoText1.classList.add('text-white');
+                    logoText1.classList.remove('text-blue-700');
+                    logoText2.classList.add('text-blue-200');
+                    logoText2.classList.remove('text-slate-900');
+                    logoSubtitle.classList.add('text-blue-100');
+                    logoSubtitle.classList.remove('text-blue-600');
+                    logoIconContainer.classList.add('text-white');
+                    logoIconContainer.classList.remove('text-blue-700');
+
+                    logoBrackets.forEach(el => {
+                        el.classList.add('bg-white');
+                        el.classList.remove('bg-slate-900');
+                    });
+
+                    // Nav Links Colors
+                    navLinks.forEach(link => {
+                        link.classList.add('text-white/90', 'shadow-black', 'drop-shadow-sm');
+                        link.classList.remove('text-slate-800');
+                    });
+
+                    // Mobile Menu Button Color
+                    mobileMenuBtn.classList.add('text-white');
+                    mobileMenuBtn.classList.remove('text-blue-900');
+                }
+            });
+
+            // Mobile Menu Toggle
+            mobileMenuBtn.addEventListener('click', () => {
+                const isHidden = mobileMenu.classList.contains('hidden');
+                if (isHidden) {
+                    mobileMenu.classList.remove('hidden');
+                    menuIconOpen.classList.add('hidden');
+                    menuIconClose.classList.remove('hidden');
+                    // Force button color to dark when menu is open for visibility against white bg
+                    mobileMenuBtn.classList.remove('text-white');
+                    mobileMenuBtn.classList.add('text-slate-900');
+                } else {
+                    mobileMenu.classList.add('hidden');
+                    menuIconOpen.classList.remove('hidden');
+                    menuIconClose.classList.add('hidden');
+                    // Restore button color based on scroll position
+                    if (window.scrollY <= 20) {
+                        mobileMenuBtn.classList.add('text-white');
+                        mobileMenuBtn.classList.remove('text-slate-900');
+                    }
+                }
+            });
+
+            // Close mobile menu on link click
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                    menuIconOpen.classList.remove('hidden');
+                    menuIconClose.classList.add('hidden');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
